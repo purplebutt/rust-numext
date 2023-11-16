@@ -1,24 +1,16 @@
 #![allow(dead_code)]
-use numan::{Numan, Len};
-
-// fn head(value: i32, n: u32) -> i32 {
-//     let len = value.len();
-//     let x = 10i32.pow(len as u32 - n);
-//     value / x
-// }
+use numext::NumExt;
 
 fn main() {
-    let number: u32 = 10284;
-    
-    let popped = number.pop(4);
-    let headed = number.head(3);
-    println!("ori:\t\t{number}");
-    println!("pop(4)->\t{popped}");
-    println!("head(3)->\t{headed}");
-    
-    let len = number.len();
+    demo1();
+    demo2();
 
-    println!("{len}");
+    let int = 12345270;
+    let flt = 12740.34;
+
+    println!("{}", int.format(","));
+    println!("{:?}", flt.tovec(3_f64));
+    println!("{}", flt.format(","));
 }
 
 fn demo1() {
@@ -43,5 +35,25 @@ fn demo1() {
     let pop3 = m.pop(3.);
 
     println!("{} {} {}", pop1, pop2, pop3);
+}
+
+fn demo2() {
+    let number: u32 = 170284;
+    
+    let popped = number.pop(5);
+    let headed = number.head(3);
+    let mid1_3 = number.mid(1,3);
+    let mid3_2 = number.mid(3,2);
+    let mid3_20 = number.mid(3,20);
+    println!("ori:\t\t{number}");
+    println!("pop(4)->\t{popped}");
+    println!("head(3)->\t{headed}");
+    println!("mid(1,3)->\t{mid1_3}");
+    println!("mid(3,2)->\t{mid3_2}");
+    println!("mid(3,20)->\t{mid3_20}");
+    
+    let len = number.len();
+
+    println!("{len}");
 }
 

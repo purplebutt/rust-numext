@@ -1,6 +1,7 @@
 [package]
-name = "numan"
+name = "numext"
 version = "0.1.0"
 edition = "2021"
-
-[dependencies]
+description = "extension method to rust primitive number"
+author = "cheries<ocing86@gmail.com>"
+license = "Apache or MIT"
